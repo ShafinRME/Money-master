@@ -11,8 +11,8 @@
 
 <body>
     <header>
-        <section class="text-5xl font-bold text-center m-8">
-            <h1>Income & Expenses</h1>
+        <section>
+            <h1 class="text-5xl font-bold text-center m-8 text-lime-400">Income & Expenses</h1>
         </section>
     </header>
     <main>
@@ -30,12 +30,16 @@
                     Clothes:<input id="clothes-input" class="bg-red-200 m-2 h-12 w-60 rounded" type="text"> <br>
                     <button id="calc-button"
                         class="text-2xl text-center m-4 font-medium bg-purple-500 px-12 py-2 rounded">Calculate</button>
-                    <h1 class="text-2xl text-center m-4font-medium">Total Expenses: <span>5500</span> </h1>
-                    <h1 class="text-2xl text-center m-4 font-medium">Balance: <span>4500</span> </h1>
-                    Save: <input class="bg-red-200 w-28 h-12 rounded" type="text" id=""> % <button
+                    <h1 class="text-2xl text-center m-4 font-medium">Total Expenses: <span id="total-expenses">00</span>
+                    </h1>
+                    <h1 class="text-2xl text-center m-4 font-medium">Balance: <span id="total-balance">00</span> </h1>
+                    Save: <input id="save-input" class="bg-red-200 w-28 h-12 rounded" type="text" id=""> % <button
+                        id="save-button"
                         class="text-2xl text-center m-4 font-medium font-medium bg-purple-500 px-12 py-2 rounded">Save</button>
-                    <h1 class="text-2xl text-center m-4 font-medium">Saving Amount: <span>2000</span> </h1>
-                    <h1 class="text-2xl text-center m-4 font-medium">Remaining Balance: <span>2500</span> </h1>
+                    <h1 class="text-2xl text-center m-4 font-medium">Saving Amount: <span id="saving-amount">00</span>
+                    </h1>
+                    <h1 class="text-2xl text-center m-4 font-medium">Remaining Balance: <span
+                            id="remaining-balance">00</span> </h1>
 
                 </div>
             </div>
