@@ -6,33 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money-Master</title>
+    <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+    <!-- Heading Part -->
     <header>
         <section>
             <h1 class="text-5xl font-bold text-center m-8 text-lime-400">Income & Expenses</h1>
         </section>
     </header>
+    <!----------------------------
+        Main part starting
+    -------------------------->
     <main>
         <section class="mx-8 my-8">
-            <div class="grid grid-cols-2 gap-4 w-3/4 mx-auto">
+            <div class="grid lg:grid-cols-2 md:grid-cols-1 gap-12 w-3/4 mx-auto">
+                <!----------------------------- 
+                    Image Adding
+                ------------------------->
                 <div class="bg-slate-100">
                     <img class="mx-auto h-full" src="Media/Income.jpg" alt="">
                 </div>
+                <!------------------------
+                     Income Part 
+                ---------------------->
                 <div class="bg-slate-100  text-center ">
                     <h1 class="text-2xl text-center my-8 font-medium m-4"> Income </h1>
-                    Income: <input id="income-input" class="bg-red-200  m-2 h-12 w-60 rounded p-2" type="text"> <br>
+                    Income:</span> <input id="income-input" class="bg-red-200  m-2 h-12 w-60 rounded p-2" type="text">
+                    <br>
+                    <!----------------------------
+                         Expenses Part
+                     --------------------------->
                     <h1 class="text-2xl text-center m-4 font-medium"> Expenses</h1>
                     Food: <input id="food-input" class="bg-red-200 m-2  h-12 w-60 rounded p-2" type="text"> <br>
-                    Rent: <input id="rent-input" class="bg-red-200 m-2  h-12 w-60 rounded p-2" type="text"> <br>
+                    Rent: <input id="rent-input" class="bg-red-200 m-2  h-12 w-60 rounded p-2" type="text">
+                    <br>
                     Clothes:<input id="clothes-input" class="bg-red-200 m-2 h-12 w-60 rounded p-2" type="text"> <br>
                     <button id="calc-button"
                         class="text-2xl text-center m-4 font-medium bg-purple-500 px-12 py-2 rounded">Calculate</button>
                     <h1 class="text-2xl text-center m-4 font-medium">Total Expenses: <span id="total-expenses">00</span>
+                        <!-------------------------------
+                             Total Balance Part
+                        ----------------------------->
                     </h1>
                     <h1 class="text-2xl text-center m-4 font-medium">Balance: <span id="total-balance">00</span> </h1>
+                    <!---------------------------
+                         Saving Part 
+                    -------------------------->
                     Save: <input id="save-input" class="bg-red-200 w-28 h-12 rounded p-2" type="text" id=""> % <button
                         id="save-button"
                         class="text-2xl text-center m-4 font-medium font-medium bg-purple-500 px-12 py-2 rounded">Save</button>
@@ -45,8 +67,28 @@
             </div>
 
         </section>
+        <!-----------------------------
+            Error Message Part
+         --------------------------->
+        <section>
+            <p id="number-error" class="bg-red-600 border-2 text-2xl text-white w-96 m-4 rounded mx-auto ">
+                Please enter a number and it should be positive.
+            </p>
+            <p id="error-message" class="bg-red-600 border-2 text-2xl text-white w-96 m-4 rounded mx-auto ">
+                Your saving
+                Amount is greater
+                than Your
+                Balance.So
+                sorry, we can't save anymore.</p>
+            <p id="more-expense" class="bg-red-600 border-2 text-2xl text-white w-96 m-4 px-8 rounded mx-auto ">
+                You have no enough money.
+            </p>
+        </section>
 
     </main>
+    <!----------------------------
+         Javascript Adding 
+    ---------------------------->
     <script src="js/money-master.js"></script>
 </body>
 
