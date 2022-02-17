@@ -1,20 +1,36 @@
+function gettingInput(inputId) {
+    const incomeInput = document.getElementById(inputId);
+    const incomeAmount = parseFloat(incomeInput.value);
+    return incomeAmount;
+
+};
+function totallCost(costId) {
+    const foodInput = document.getElementById(costId);
+    const foodCost = parseFloat(foodInput.value);
+    return foodCost;
+};
+
 document.getElementById('calc-button').addEventListener('click', function () {
     // Getting Income Input.
-    const incomeInput = document.getElementById('income-input');
-    const incomeAmount = parseFloat(incomeInput.value);
+    // const incomeInput = document.getElementById('income-input');
+    // const incomeAmount = parseFloat(incomeInput.value);
+    const incomeAmount = gettingInput('income-input');
 
     // Getting Food cost.
-    const foodInput = document.getElementById('food-input');
-    const foodCost = parseFloat(foodInput.value);
+    // const foodInput = document.getElementById('food-input');
+    // const foodCost = parseFloat(foodInput.value);
+    const foodCost = totallCost('food-input');
 
     // Getting Rent Cost.
-    const rentInput = document.getElementById('rent-input');
-    const rentCost = parseFloat(rentInput.value);
+    // const rentInput = document.getElementById('rent-input');
+    // const rentCost = parseFloat(rentInput.value);
+    const rentCost = totallCost('rent-input');
 
 
     // Getting Clothes Cost.
-    const clothesInput = document.getElementById('clothes-input');
-    const clothesCost = parseFloat(clothesInput.value);
+    // const clothesInput = document.getElementById('clothes-input');
+    // const clothesCost = parseFloat(clothesInput.value);
+    const clothesCost = totallCost('clothes-input');
 
 
     // Getting and Calculating Total Cost.
@@ -32,9 +48,9 @@ document.getElementById('save-button').addEventListener('click', function () {
     const incomeInput = document.getElementById('income-input');
     const incomeAmount = parseFloat(incomeInput.value);
     // Getting Saving percentage.
-    const savingPercentageInput = document.getElementById('save-input');
-    const savingPercentageAmount = parseFloat(savingPercentageInput.value);
-    console.log(savingPercentageAmount);
+    // const savingPercentageInput = document.getElementById('save-input');
+    // const savingPercentageAmount = parseFloat(savingPercentageInput.value);
+    const savingPercentageAmount = gettingInput('save-input');
     // Getting and Calculating saving Amount.
     const savingAmount = document.getElementById('saving-amount');
     const totalSavingAmount = (incomeAmount * savingPercentageAmount) / 100;
