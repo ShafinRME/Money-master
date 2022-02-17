@@ -1,12 +1,12 @@
 function gettingInput(inputId) {
-    const incomeInput = document.getElementById(inputId);
-    const incomeAmount = parseFloat(incomeInput.value);
-    return incomeAmount;
+    const givingInput = document.getElementById(inputId);
+    const givingAmount = parseFloat(givingInput.value);
+    return givingAmount;
 };
 function totallCost(costId) {
-    const foodInput = document.getElementById(costId);
-    const foodCost = parseFloat(foodInput.value);
-    return foodCost;
+    const expenseInput = document.getElementById(costId);
+    const expenseCost = parseFloat(expenseInput.value);
+    return expenseCost;
 };
 
 document.getElementById('calc-button').addEventListener('click', function () {
@@ -23,19 +23,23 @@ document.getElementById('calc-button').addEventListener('click', function () {
     // Getting Clothes Cost.
     const clothesCost = totallCost('clothes-input');
 
-
     //Getting and Calculating Total Cost.
     const totalCost = document.getElementById('total-expenses');
     const errorMssg1 = document.getElementById('number-error');
+    const errorMssg2 = document.getElementById('error-message')
+    const errorMssg3 = document.getElementById('more-expense');
     if ((isNaN(incomeAmount) || isNaN(foodCost) || isNaN(rentCost) || isNaN(clothesCost)) || (foodCost < 0 || rentCost < 0 || clothesCost < 0 || incomeAmount < 0)) {
-
         errorMssg1.style.display = 'block';
+        errorMssg2.style.display = 'none';
+        errorMssg3.style.display = 'none';
     }
     else {
         errorMssg1.style.display = 'none';
         const totalCostAmount = foodCost + rentCost + clothesCost;
         const errorMssg3 = document.getElementById('more-expense');
         if (totalCostAmount > incomeAmount) {
+            errorMssg1.style.display = 'none';
+            errorMssg2.style.display = 'none';
             errorMssg3.style.display = 'block';
 
         }
@@ -66,9 +70,14 @@ document.getElementById('save-button').addEventListener('click', function () {
     const totalSavingAmount = (incomeAmount * savingPercentageAmount) / 100;
     const totalCostAmount = foodCost + rentCost + clothesCost;
     const totalBalanceAmount = incomeAmount - totalCostAmount;
+    const errorMssg1 = document.getElementById('number-error');
     const errorMssg2 = document.getElementById('error-message')
+    const errorMssg3 = document.getElementById('more-expense');
     if (totalSavingAmount > totalBalanceAmount) {
+        errorMssg1.style.display = 'none';
         errorMssg2.style.display = 'block';
+        errorMssg3.style.display = 'none';
+
     }
     else {
         savingAmount.innerText = totalSavingAmount;
